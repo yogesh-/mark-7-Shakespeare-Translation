@@ -9,6 +9,11 @@ function constructURL(text){
 
 }
 
+function errorHandler(error){
+    console.log("error occured",error)
+    alert("Error occured, please try after sometime")
+}
+
 function clickApi(){
 var finaltext = inputTxt.value;
 fetch(constructURL(finaltext))
@@ -17,6 +22,7 @@ fetch(constructURL(finaltext))
     {var translatedText = json.contents.translated;
         outputTxt.innerText = translatedText;
     })
+    .catch(errorHandler)
 }
 
 
